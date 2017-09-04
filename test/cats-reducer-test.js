@@ -1,4 +1,4 @@
-import catsReducer from '../src/reducers/cats_reducer'
+import catsReducer from '../src/reducers/catsReducer'
 import expect from 'expect'
 
 describe('cats reducer', () => {
@@ -11,7 +11,7 @@ describe('cats reducer', () => {
   it('should handle the FETCH_CATS action', () => {
     const catPics = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
     expect(
-      catsReducer([], {
+      catsReducer({loading: false, pictures: []}, {
         type: 'FETCH_CATS',
         payload:  catPics
       })
